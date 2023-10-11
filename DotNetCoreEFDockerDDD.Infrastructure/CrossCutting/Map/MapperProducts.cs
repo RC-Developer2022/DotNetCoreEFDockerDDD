@@ -9,16 +9,36 @@ public class MapperProducts : IMapperProducts
     // I will finish it the next day
     public Products MapperDtoToEntity(ProductsDto productsDto)
     {
-        throw new NotImplementedException();
+        var customers = new Products()
+        {
+            Id = productsDto.Id,
+            Name = productsDto.Name,
+            Price = productsDto.Price
+        };
+
+        return customers;
     }
 
     public ProductsDto MapperEntityToDto(Products products)
     {
-        throw new NotImplementedException();
+        var customersDto = new ProductsDto()
+        {
+            Id = products.Id,
+            Name = products.Name,
+            Price = products.Price
+        };
+        return customersDto;
     }
 
     public IEnumerable<ProductsDto> MapperListCustomersDto(IEnumerable<Products> products)
     {
-        throw new NotImplementedException();
+        var dto = products.Select(p => new ProductsDto()
+        {
+            Id = p.Id,
+            Name = p.Name,
+            Price = p.Price
+        });
+
+        return dto;
     }
 }
