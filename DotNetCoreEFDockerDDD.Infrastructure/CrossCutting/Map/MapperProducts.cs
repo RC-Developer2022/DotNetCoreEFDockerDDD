@@ -6,7 +6,7 @@ namespace DotNetCoreEFDockerDDD.Infrastructure.CrossCutting.Map;
 
 public class MapperProducts : IMapperProducts
 {
-    // I will finish it the next day
+    IEnumerable<ProductsDto> customersDtos = new List<ProductsDto>();
     public Products MapperDtoToEntity(ProductsDto productsDto)
     {
         var customers = new Products()
